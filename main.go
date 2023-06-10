@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"os/user"
+
+	"github.com/s-li1/interpreter/repl"
 )
 
 func main() {
@@ -11,6 +14,7 @@ func main() {
       panic(err)
     }
 
-    fmt.Printf("Hello %s!\n", user.Username)
+    fmt.Printf("Hello %s! Test this out!\n", user.Username)
+    repl.Start(os.Stdin, os.Stdout)
     fmt.Printf("Type something\n")
 }
